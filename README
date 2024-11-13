@@ -7,7 +7,7 @@ FORMATO DE ENVIRONMENT PARA COMMAND:
 
 DB_USER=commanduser
 DB_PASSWORD=*******
-DB_SERVER=aidedev.gatewayit.co
+DB_SERVER=aidedev.servidor.co
 DB_PORT=5432
 DB_NAME=geology
 SSLMODE=disable
@@ -18,7 +18,7 @@ FORMATO DE ENVIRONMENT PARA QUERY:
 
 DB_USER=queryuser
 DB_PASSWORD=********
-DB_SERVER=aidedev.gatewayit.co
+DB_SERVER=aidedev.servidor.co
 DB_PORT=5432
 DB_NAME=geology
 SSLMODE=disable
