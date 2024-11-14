@@ -1,3 +1,4 @@
+cmd/volcanoes/.env
 .env
 .env_command
 .env_query
