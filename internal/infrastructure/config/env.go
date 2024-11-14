@@ -11,15 +11,18 @@ import (
 	"github.com/joho/godotenv"
 )
 
+// Para usar reflection se usa el tag modes, restringiendo los posibles valores a uno de los listados.
+// Panic si llega otro o no se configura
 type Env struct {
 	DbUser     string
 	DbPassword string
 	DbServer   string
+	DbDriver   string `modes:"valid=postgresql,mariadb,mysql"`
 	DbPort     string
 	DbName     string
 	SslMode    string
 	ServerPort string
-	AppMode    string `modes:"valid=QUERY,COMMAND"` //Para usar reflection restringiendo los posibles valores a uno de estos dos. Panic si llega otro
+	AppMode    string `modes:"valid=QUERY,COMMAND"`
 }
 
 func NewEnv() *Env {
@@ -90,6 +93,7 @@ func (c *Env) Env() {
 	c.DbUser = os.Getenv("DB_USER")
 	c.DbPassword = os.Getenv("DB_PASSWORD")
 	c.DbServer = os.Getenv("DB_SERVER")
+	c.DbDriver = os.Getenv("DB_DRIVER")
 	c.DbPort = os.Getenv("DB_PORT")
 	c.DbName = os.Getenv("DB_NAME")
 	c.SslMode = os.Getenv("SSLMODE")

@@ -1,13 +1,18 @@
 BASE DE DATOS DE VOLCANES GEORREFERENCIADOS
 
-Bla bla bla
+Aplicación que simula un microservicio que almacena y gestiona datos de volcanes georreferenciados. Un solo ejecutable se puede lanzar en modo COMMAND o QUERY. 
+Solamente levanta los endpoints que permitan escribir o leer en la db respectivamente.
+Se usan dos bases de datos diferentes, una de lectura en mariadb, y una de escritura en postgresql. 
+Un proceso corre en uno de los servidores y sincroniza las tablas actualizadas cada 60 segundos.
 
+El servicio lee las vartiables de entorno de un archivo .env para configurar el modo de los endpoints y la base de datos.
 
 FORMATO DE ENVIRONMENT PARA COMMAND:
 
 DB_USER=commanduser
 DB_PASSWORD=*******
-DB_SERVER=aidedev.servidor.co
+DB_SERVER=bb.servidor.co
+DB_DRIVER=postgresql
 DB_PORT=5432
 DB_NAME=geology
 SSLMODE=disable
@@ -18,7 +23,8 @@ FORMATO DE ENVIRONMENT PARA QUERY:
 
 DB_USER=queryuser
 DB_PASSWORD=********
-DB_SERVER=aidedev.servidor.co
+DB_SERVER=aa.servidor.co
+DB_DRIVER=postgresql
 DB_PORT=5432
 DB_NAME=geology
 SSLMODE=disable
